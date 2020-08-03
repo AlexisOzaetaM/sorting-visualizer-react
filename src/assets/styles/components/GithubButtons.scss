@@ -1,0 +1,15 @@
+.GitHub-button-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.GitHub-button-wrapper:first-child span {
+    margin-right: .5rem;
+}
+
+@media (max-width: 400px) {
+    .GitHub-button-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
