@@ -1,0 +1,30 @@
+@import '../../../colors.scss';
+
+.Header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color;
+}
+
+.Menu-wrapper {
+    width: 100%;
+    height: 2.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 400px) {
+    .Header-container {
+        height: 4rem;
+    }
+
+    .Menu-wrapper {
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        padding: 1rem;
+        background-color: darkcyan;
+    }
+}
