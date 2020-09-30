@@ -1,0 +1,14 @@
+@import '../../../colors.scss';
+
+.Button-container button {
+    border-style: none;
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Button-container button:focus {
+    outline: none;
+}

@@ -1,0 +1,24 @@
+$breakpoint-small-devices: 576px;
+$breakpoint-medium-devices: 992px;
+$breakpoint-large-devices: 1200px;
+
+$text-size: 14px;
+// Paddings
+$padding-xs: 0.2857rem; // 4px
+$padding-s: 0.4285rem; // 6px
+$padding-m: 0.5714rem; // 8px
+$padding-xm: 0.7114rem; // 10px
+$padding-l: 1rem; // 14px
+
+
+@media (max-width: $breakpoint-small-devices) { 
+
+}
+
+@media (max-width: $breakpoint-medium-devices) { 
+
+}
+
+@media (max-width: $breakpoint-large-devices) { 
+
+}
