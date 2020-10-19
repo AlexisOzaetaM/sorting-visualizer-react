@@ -4,11 +4,16 @@ import '../assets/styles/components/Select.scss'
 
 const select = (props) => {
     return(
-        <div className="Select-container">
+        <div className="select">
             <select>
                 {
                     props.methods.map((method, index) => {
-                        return <option value={method.value}>{method.name}</option>
+                        return <option 
+                            className="select__option" 
+                            key={index} 
+                            value={method.value}>
+                                {method.name}
+                            </option>
                     })
                 }
             </select>

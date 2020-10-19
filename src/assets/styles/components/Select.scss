@@ -1,0 +1,46 @@
+@import '../../../colors.scss';
+@import '../../../dimens.scss';
+
+.select {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    background-color: transparent;
+    border: $border-xs solid $text-color;
+    border-radius: $border_radius-xs;
+    cursor: pointer;
+    font-size: inherit;
+    color: $text-color;
+
+    select,
+    &::after {
+        grid-area: select;
+    }
+
+    select {
+        width: $select-width;
+        height: 100%;
+        padding: $padding-m $padding-s;
+        color: $text-color;
+    }
+
+    &::after {
+        content: "";
+        height: .6rem;
+        width: 1rem;
+        background-color: $text-color;
+        color: $text-color;
+        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+        justify-self: end;
+        margin-right: $margin-l;
+    }
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) {
+    .select {
+        select {
+            width: $select-width-tablet;
+            padding: $padding-s;
+        }
+    }
+}
