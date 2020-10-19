@@ -1,0 +1,8 @@
+@import '../../../colors.scss';
+@import '../../../dimens.scss';
+
+h4.title {
+        color: $text-color !important;
+        font-size: $text-size-header;
+        font-weight: bold;
+}

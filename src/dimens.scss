@@ -1,0 +1,56 @@
+// Breakpoints
+$breakpoint-smartphone-devices: 576px;
+$breakpoint-tablet-devices: 992px;
+$breakpoint-web-devices: 1200px;
+
+// Text
+$text-size: 14px;
+$text-size-header: 1.2rem;
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////// min-width: $breakpoint-smartphone-devices
+///////////////////////////////////////////////////////////////////////////
+
+// Paddings
+$padding-xs: 0.2857rem; // 4px
+$padding-s: 0.4285rem; // 6px
+$padding-m: 0.5714rem; // 8px
+$padding-xm: 0.7114rem; // 10px
+$padding-l: 1rem; // 14px
+
+// Margins
+$margin-xs: 0.2857rem; // 4px
+$margin-s: 0.4285rem; // 6px
+$margin-m: 0.5714rem; // 8px
+$margin-xm: 0.7114rem; // 10px
+$margin-l: 1rem; // 14px
+
+// Border
+$border-xs: 1px;
+
+// Border radius
+$border-radius-xs: .3rem;
+$border-radius-s: .4rem;
+
+$header-height: 4rem;
+
+// Slider
+$slider-width: 100%;
+
+// Buttons
+$button-width: 100%;
+
+// Select
+$select-width: 100%;
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////// max-width: $breakpoint-tablet-devices
+///////////////////////////////////////////////////////////////////////////
+$slider-width-tablet: 15rem;
+// Select
+$select-width-tablet: 10rem;
+
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// min-width: $breakpoint-web-devices
+///////////////////////////////////////////////////////////////////////////
+

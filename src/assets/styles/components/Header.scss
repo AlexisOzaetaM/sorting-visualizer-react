@@ -1,0 +1,133 @@
+@import '../../../colors.scss';
+@import '../../../dimens.scss';
+
+.header {
+    background-color: $assent-color;
+    display: flex;
+    flex-direction: row;
+    height: $header-height;
+    padding: 0 $padding-l;
+    
+    &__title {
+        display: inherit;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__icon {
+        display: inherit;
+        height: inherit;
+        width: 1.2rem;
+        cursor: pointer;
+        
+        &:hover {
+            path {
+                fill: $normal-state-color;
+            }
+        }
+
+        path {
+            fill: $text-color;
+        }
+    }
+
+    &__settings {
+        background-color: inherit;
+        flex-direction: column;
+        height: 0;
+        position: absolute;
+        top: $header-height;
+        left: 0;
+        right: 0;
+        padding: $padding-l;
+        transition: height ease .9s;
+        opacity: 0;
+
+        &-open {
+            display: flex;
+            height: auto;
+            opacity: 1;
+        }
+
+        &__slider,
+        &__select,
+        &__buttons {
+            width: 100%;
+            padding-bottom: $padding-l;
+        }
+
+        &__buttons {
+            display: inherit;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .button:nth-child(1) {
+                margin-right: $margin-s;
+            }
+
+            .button:nth-child(2) {
+                margin-left: $margin-s;
+            }
+        }
+
+        &__github {
+            width: inherit;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) and (max-width: $breakpoint-tablet-devices) {
+        .header {
+            &__title {
+                display: none;
+            }
+        }
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) {
+    .header {
+        &__icon {
+            display: none;
+        }
+
+        &__settings {
+            width: auto;
+            flex-direction: row;
+            position: unset;
+            padding: 0;
+
+            &__slider,
+            &__select,
+            &__buttons {
+                width: 100%;
+                padding-bottom: 0;
+                padding-left: $padding-l;
+                display: flex;
+                align-items: center;
+            }
+
+            &__github {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) {
+    .header {
+        &__settings {
+            height: auto;
+            opacity: 1;
+            display: flex;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet-devices + 1) {
+    .header {
+        &__title {
+            width: auto;
+        }
+    }
+}
