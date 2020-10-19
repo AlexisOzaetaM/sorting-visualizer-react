@@ -1,78 +1,133 @@
 @import '../../../colors.scss';
 @import '../../../dimens.scss';
 
-.Header-container {
+.header {
+    background-color: $assent-color;
     display: flex;
     flex-direction: row;
-    //grid-template-rows: 100%;
-    //grid-template-columns: auto, auto, auto, auto, auto;
-    //grid-template-areas: "title new slider methods sort github";
-    height: 5rem;
-    background-color: $assent-color;
-}
-
-.Menu-wrapper {
-    width: 100%;
-    height: 2.5rem; 
-    display: flex;
-    align-items: center;
-}
-
-.Header-container .Title-container,
-.Header-container .New-container,
-.Header-container .Slider-container,
-.Header-container .Select-container,
-.Header-container .Sort-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 1.5rem;
-}
-
-.Header-container .Title-container {
-    justify-content: start;
-}
-
-/*
-.Header-container .Title-container {
-    grid-area: title;
-}
-
-.Header-container .New-container {
-    grid-area: new;
-}
-
-.Header-container .Slider-container {
-    grid-area: slider;
-}
-
-.Header-container .Select-container {
-    grid-area: methods;
-}
-
-.Header-container .Sort-container {
-    grid-area: sort;
-}
-
-.Header-container .GitHub-button-wrapper {
-    grid-area: github;
-}
-*/
-
-@media (max-width: 556px) {
-    .Header-container {
-        height: 4rem;
+    height: $header-height;
+    padding: 0 $padding-l;
+    
+    &__title {
+        display: inherit;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
     }
 
-    .Menu-wrapper {
+    &__icon {
+        display: inherit;
+        height: inherit;
+        width: 1.2rem;
+        cursor: pointer;
+        
+        &:hover {
+            path {
+                fill: $normal-state-color;
+            }
+        }
+
+        path {
+            fill: $text-color;
+        }
+    }
+
+    &__settings {
+        background-color: inherit;
+        flex-direction: column;
+        height: 0;
         position: absolute;
-        top: 4rem;
+        top: $header-height;
+        left: 0;
         right: 0;
-        padding: 1rem;
-        background-color: darkcyan;
-    }
+        padding: $padding-l;
+        transition: height ease .9s;
+        opacity: 0;
 
-    .Header-container .Title-container {
-        display: none;
+        &-open {
+            display: flex;
+            height: auto;
+            opacity: 1;
+        }
+
+        &__slider,
+        &__select,
+        &__buttons {
+            width: 100%;
+            padding-bottom: $padding-l;
+        }
+
+        &__buttons {
+            display: inherit;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .button:nth-child(1) {
+                margin-right: $margin-s;
+            }
+
+            .button:nth-child(2) {
+                margin-left: $margin-s;
+            }
+        }
+
+        &__github {
+            width: inherit;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) and (max-width: $breakpoint-tablet-devices) {
+        .header {
+            &__title {
+                display: none;
+            }
+        }
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) {
+    .header {
+        &__icon {
+            display: none;
+        }
+
+        &__settings {
+            width: auto;
+            flex-direction: row;
+            position: unset;
+            padding: 0;
+
+            &__slider,
+            &__select,
+            &__buttons {
+                width: 100%;
+                padding-bottom: 0;
+                padding-left: $padding-l;
+                display: flex;
+                align-items: center;
+            }
+
+            &__github {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) {
+    .header {
+        &__settings {
+            height: auto;
+            opacity: 1;
+            display: flex;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet-devices + 1) {
+    .header {
+        &__title {
+            width: auto;
+        }
     }
 }

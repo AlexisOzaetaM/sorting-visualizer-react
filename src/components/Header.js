@@ -11,26 +11,45 @@ class Header extends Component {
         super(props)
         this.state = {
             methods: [
-                { value: 'BubbleSort', name: "Choose an algorithm" },
-                { value: 'BubbleSort', name: "Bubble Sort" },
-                { value: "MergeSort", name: "Merge Sort" },
-                { value: "HeapSort", name: "Heap Sort" },
-                { value: "QuickSort", name: "Quick Sort" }
-            ]
+                { value: 1, name: "Bubble Sort" },
+                { value: 2, name: "Merge Sort" },
+                { value: 3, name: "Heap Sort" },
+                { value: 4, name: "Quick Sort" }
+            ],
+            isSettingsOpen: false
         }
     }
 
+    showSettings = () => {
+        let { isSettingsOpen } = this.state
+        this.setState({ 'isSettingsOpen': !isSettingsOpen })
+        
+    }
+
     render() {
-        const {methods} = this.state
+        const { methods, isSettingsOpen } = this.state
 
         return (
-            <header className="Header-container">
-                <div className="Title-container"><Title /></div>
-                <div className="New-container"><Button title="New Array" color="blue" event={null}/></div>
-                <Slider min="10" max="100"/>
-                <Select methods={methods} />
-                <div className="Sort-container"><Button title="Sort!" color="green" event={null}/></div>
-                <GithubButtons />
+            <header className="header">
+                <div className="header__title"><Title /></div>
+                <div className="header__icon" onClick={() => this.showSettings()}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+                </div>
+                <div className={`header__settings ${isSettingsOpen ? 'header__settings-open' : ''}`}>
+                    <div className="header__settings__slider">
+                        <Slider min="10" max="100"/>
+                    </div>
+                    <div className="header__settings__select">
+                        <Select methods={methods} />
+                    </div>
+                    <div className="header__settings__buttons">
+                        <Button title="New Array" color="blue" event={null}/>
+                        <Button title="Sort!" color="green" event={null}/>
+                    </div>
+                    <div className="header__settings__github">
+                        <GithubButtons />
+                    </div>
+                </div>
             </header>
         )
     }
