@@ -5,7 +5,7 @@ import '../assets/styles/components/GithubButtons.scss'
 
 const githubButtons = () => {
     return (
-        <div className="GitHub-button-wrapper">
+        <div className="GitHub">
             <GitHubFollowButton
                 href="https://github.com/AlexisOzaetaM"
                 data-size="large"

@@ -1,16 +1,5 @@
-.GitHub-button-wrapper {
+.GitHub {
     display: flex;
     align-items: center;
-    justify-content: end;
-}
-
-.GitHub-button-wrapper > span {
-    margin-right: 1rem;
-}
-
-@media (max-width: 400px) {
-    .GitHub-button-wrapper {
-        display: flex;
-        flex-direction: column;
-    }
+    justify-content: space-between;
 }
