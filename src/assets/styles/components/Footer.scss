@@ -1,0 +1,26 @@
+@import '../../../colors.scss';
+@import '../../../dimens.scss';
+
+.footer {
+    display: none;
+}
+
+@media (min-width: $breakpoint-smartphone-devices + 1) {
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: $header-height;
+        padding: 0 $padding-l;
+
+        &__github {
+            span:nth-child(1) {
+                margin-right: $margin-s;
+            }            
+        }
+    }
+}
