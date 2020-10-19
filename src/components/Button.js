@@ -4,7 +4,7 @@ import '../assets/styles/components/Button.scss'
 
 const button = ({title, color, event}) => {
     return(
-        <div className="Button-container">
+        <div className="button">
             <button className={color} onClick={event}>
                 {title}
             </button>

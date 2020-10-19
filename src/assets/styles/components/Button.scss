@@ -1,14 +1,30 @@
 @import '../../../colors.scss';
+@import '../../../dimens.scss';
 
-.Button-container button {
-    border-style: none;
-    padding: .5rem 1rem;
-    border-radius: .2rem;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+.button {
+    width: 100%;
+    button {
+        border-style: none;
+        padding: $padding-m $padding-xm;
+        width: 100%;
+        border-radius: $border-radius-xs;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+    }
+
+    button:focus {
+        outline: none;
+    }
 }
 
-.Button-container button:focus {
-    outline: none;
+@media (min-width: $breakpoint-smartphone-devices + 1) {
+    .button {
+        min-width: 10rem;
+    
+        button:hover {
+            opacity: .8;
+        }
+    }   
 }
