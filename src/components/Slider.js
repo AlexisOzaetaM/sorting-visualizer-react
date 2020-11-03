@@ -8,7 +8,8 @@ const Slider = (props) => {
             <input className="slider__input"
                 type="range" 
                 min={props.min} 
-                max={props.max} />
+                max={props.max}
+                onChange={props.event} />
         </div>
     )
 }

@@ -5,13 +5,14 @@ import '../assets/styles/components/Select.scss'
 const select = (props) => {
     return(
         <div className="select">
-            <select>
+            <select onChange={props.event}>
                 {
                     props.methods.map((method, index) => {
                         return <option 
                             className="select__option" 
                             key={index} 
-                            value={method.value}>
+                            value={method.value}
+                            disabled={method.isDisabled}>
                                 {method.name}
                             </option>
                     })
