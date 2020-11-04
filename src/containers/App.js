@@ -2,16 +2,28 @@ import React, { Component } from 'react';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Main from '../containers/Main'
+import { createNewArray } from '../algorithms/array'
 import '../assets/styles/containers/App.scss';
 
 class App extends Component {
 	state = {
 		heightMain: 0,
-		
+		bars: {
+			array: [],
+			length: 50
+		}
 	}
 
-	handleCreateArray = (e) => {
-		//console.log(e.target);
+	handleCreateArray = () => {
+		const newArray = createNewArray(this.state.bars.length, this.state.heightMain)
+		
+		this.setState({
+			...this.state,
+			bars: {
+				...this.state.bars,
+				array: newArray
+			}
+		})
 	}
 
 	handleSortArray = (e) => {
@@ -23,7 +35,15 @@ class App extends Component {
 	}
 
 	handleSlider = (e) => {
-		//console.log(e.target.value);
+		const newArray = createNewArray(e.target.value, this.state.heightMain)
+
+		this.setState({
+			...this.state,
+			bars: {
+				array: newArray,
+				length: e.target.value
+			}
+		})
 	}
 
 	componentDidMount() {
@@ -31,15 +51,21 @@ class App extends Component {
 		const heightFooter = document.getElementsByClassName("footer")[0].offsetHeight
 		const heightHeader = document.getElementsByClassName("header")[0].offsetHeight
 		const heightMain = heightPage - heightHeader - heightFooter
+		
+		const newArray = createNewArray(this.state.bars.length, heightMain)
 
 		this.setState({
 			...this.state,
-			heightMain: heightMain
+			heightMain: heightMain,
+			bars: {
+				...this.state.bars,
+				array: newArray
+			}
 		})
 	}
 
 	render() {
-		const { heightMain } = this.state
+		const { heightMain, bars } = this.state
 		
 		return (
 			<div className="App">
@@ -49,7 +75,8 @@ class App extends Component {
 					onSelectAlgorithm={this.handleSelectAlgorithm}
 					onChangeSlider={this.handleSlider} /> 
 				<Main 
-					heightMain={heightMain} />
+					heightMain={heightMain} 
+					array={bars.array} />
 				<Footer />
 			</div>
 		);
