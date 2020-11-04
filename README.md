@@ -1,5 +1,5 @@
 # :lobster: Sorting Visualizer Project
-A SPA developed with React JS to show how sorting algorithms work .  [Try it here!](https://alexisozaetam.github.io/sorting-visualizer-react/ "Try it here!")
+A SPA developed with React JS to show how sorting algorithms work .  [Try it here!](https://alexisozaetam.github.io/Sorting-Visualizer-React/ "Try it here!")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
