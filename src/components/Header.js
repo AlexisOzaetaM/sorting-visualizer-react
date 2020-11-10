@@ -4,15 +4,16 @@ import Title from '../components/Title'
 import Button from '../components/Button'
 import Slider from '../components/Slider'
 import Select from '../components/Select'
+import * as Algorithm from '../constants/Algorithms'
 import '../assets/styles/components/Header.scss'
 
 class Header extends Component {
     state = {
         methods: [
-            { value: 1, name: "Bubble Sort", isDisabled: false },
-            { value: 2, name: "Merge Sort", isDisabled: true },
-            { value: 3, name: "Heap Sort", isDisabled: true },
-            { value: 4, name: "Quick Sort", isDisabled: true }
+            { value: Algorithm.BUBBLE_SORT, name: "Bubble Sort", isDisabled: false },
+            { value: Algorithm.MERGE_SORT, name: "Merge Sort", isDisabled: true },
+            { value: Algorithm.HEAP_SORT, name: "Heap Sort", isDisabled: true },
+            { value: Algorithm.QUICK_SORT, name: "Quick Sort", isDisabled: true }
         ],
         slider: {
             minValue: 10,
@@ -26,7 +27,7 @@ class Header extends Component {
         this.setState({
             ...this.state,
             isSettingsOpened: !isSettingsOpened
-        }) 
+        })
     }
 
     render() {
